@@ -25,6 +25,7 @@ import {
 import { VisAugmenterStart } from '../../../src/plugins/vis_augmenter/public';
 import { DataPublicPluginStart } from '../../../src/plugins/data/public';
 import { AssistantSetup } from './types';
+import { registerAssistantDependencies } from './dependencies/register_assistant';
 
 declare module '../../../src/plugins/ui_actions/public' {
   export interface ActionContextMapping {
@@ -81,6 +82,7 @@ export class AlertingPlugin
           suggestions: [`What's this alert?`, `How to address this alert?`],
         },
       ]);
+      registerAssistantDependencies(assistantDashboards);
     }
 
     setUISettings(core.uiSettings);

@@ -70,6 +70,10 @@ export const getInitialValues = ({
     };
   }
 
+  if (initialValues.bucketValue) {
+    initialValues.bucketValue = +initialValues.bucketValue;
+  }
+
   return initialValues;
 };
 
